@@ -1,0 +1,28 @@
+package com.javatechie.aws.cicd.example;
+
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+@Repository
+public class OrderDao {
+
+
+    public List<Order> getOrders() {
+        return Stream.of(
+                new Order(101, "Mobile", 1, 30000),
+                new Order(58, "Book", 4, 2000),
+                new Order(205, "Laptop", 1, 150000),
+                new Order(809, "headset", 1, 1799),
+                new Order(111, "Car", 1, 200000),
+                new Order(112, "TV", 5, 400000),
+                new Order(113, "Headphones", 2, 500),
+                new Order(114, "Refrigerator", 5, 2500),
+                new Order(115, "Play station", 3, 1500),
+                new Order(116, "Speakers", 4, 700),
+                new Order(117, "Clothes", 10, 250))
+                .collect(Collectors.toList());
+    }
+}
